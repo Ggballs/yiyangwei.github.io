@@ -168,6 +168,62 @@ h3 {
   color: rgba(31, 26, 23, 0.3);
 }
 
+.hero-meta {
+  display: grid;
+  justify-items: start;
+  gap: 0.8rem;
+  margin-top: 1.65rem;
+}
+
+.hero-meta .hero-links {
+  margin-top: 0;
+}
+
+.hobby-panel {
+  width: min(100%, 37rem);
+}
+
+.hobby-button {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.9rem;
+  list-style: none;
+  user-select: none;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 1.2px;
+  transition: color 140ms ease;
+}
+
+.hobby-button:hover {
+  color: var(--accent);
+}
+
+.hobby-button::-webkit-details-marker {
+  display: none;
+}
+
+.hobby-button::after {
+  content: "";
+}
+
+.hobby-content {
+  margin-top: 0.55rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid rgba(31, 26, 23, 0.06);
+  border-radius: 16px;
+  background: rgba(255, 255, 252, 0.78);
+  color: var(--muted);
+}
+
+.hobby-content p {
+  margin: 0;
+}
+
 .section {
   padding: 1.35rem 0 0.2rem;
 }
