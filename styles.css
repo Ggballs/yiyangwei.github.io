@@ -2,7 +2,7 @@
   --bg: #fcfaf6;
   --paper: rgba(255, 255, 252, 0.9);
   --ink: #1f1a17;
-  --muted: #655a51;
+  --muted: #3c332d;
   --line: rgba(31, 26, 23, 0.1);
   --accent: #8b3d24;
   --accent-soft: rgba(139, 61, 36, 0.1);
@@ -128,12 +128,12 @@ h3 {
 
 h1 {
   margin-top: 0.25rem;
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-size: clamp(2.35rem, 4.2vw, 4rem);
   letter-spacing: -0.03em;
 }
 
 h2 {
-  font-size: clamp(2rem, 3vw, 2.9rem);
+  font-size: clamp(1.65rem, 2.5vw, 2.35rem);
   letter-spacing: -0.03em;
 }
 
