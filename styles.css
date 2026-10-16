@@ -471,6 +471,13 @@ h3 {
   object-fit: contain;
 }
 
+.site-footer {
+  padding-bottom: 1.5rem;
+  color: #756e68;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
 @media (max-width: 900px) {
   .hero,
   .publication,
