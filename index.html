@@ -359,7 +359,7 @@
     <script>
       const journey = document.querySelector('.journey-route');
       const journeyPlay = document.querySelector('.journey-play');
-      let observer;
+      let manuallyPlayed = false;
       function playJourney(manual = false) {
         journey.classList.add('will-animate');
         journey.classList.toggle('manual-play', manual);
@@ -368,19 +368,12 @@
         journey.classList.add('is-visible');
       }
       journeyPlay.addEventListener('click', () => {
-        if (observer) observer.disconnect();
+        manuallyPlayed = true;
         playJourney(true);
       });
-      playJourney();
-      if ('IntersectionObserver' in window) {
-        observer = new IntersectionObserver((entries) => {
-          if (entries[0].isIntersecting) {
-            playJourney();
-            observer.disconnect();
-          }
-        }, { threshold: 0.15 });
-        observer.observe(journey);
-      }
+      window.addEventListener('load', () => {
+        if (!manuallyPlayed) playJourney();
+      }, { once: true });
     </script>
   </body>
 </html>
