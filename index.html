@@ -76,6 +76,40 @@
         </div>
       </section>
 
+      <section class="section shell journey" id="journey" aria-labelledby="journey-title">
+        <div class="section-head journey-heading"><h2 id="journey-title">My Journey</h2><button class="journey-play" type="button" aria-controls="journey-route">▶ Play journey</button></div>
+        <div class="journey-route" id="journey-route">
+          <svg class="journey-line" viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M 50 195 C 100 195, 100 105, 150 105 S 200 195, 250 195 S 300 105, 350 105 S 400 195, 450 195 S 500 105, 550 105" /></svg>
+            <div class="journey-step">
+              <p class="journey-label">01 / Examination</p>
+              <span class="journey-icon" aria-hidden="true">✦</span>
+              <div><time>Sep 2020</time><strong>Top 0.06%</strong><p>National College Entrance Examination · 130 / 229,000</p><p>Entered Zhejiang University</p></div>
+            </div>
+            <div class="journey-step">
+              <img class="journey-logo" src="https://p3-sdbk2-media.byteimg.com/tos-cn-i-xv4ileqgde/81f019a459294d2983c8c16adaaba938~tplv-xv4ileqgde-resize-w%3A720.image" alt="Zhejiang University" />
+              <div><time>Jan 2021</time><strong>Top 10%</strong><p>2020 Fall Rank 13/186</p><p>Major switched (EE → Information Engineering)</p></div>
+            </div>
+            <div class="journey-step">
+              <p class="journey-label">02 / Industry</p>
+              <div class="journey-logos"><img src="./assets/whale-logo.png" alt="Whale" /><img src="./assets/trip-logo.png" alt="Trip.com" /><img src="./assets/meituan-logo.png" alt="Meituan" /></div>
+              <div><time>Sep 2022 – Sep 2023</time><strong>3 internships</strong><p>AI · RAG · Engineering</p></div>
+            </div>
+            <div class="journey-step">
+              <img class="journey-logo" src="./assets/qwen-logo.png" alt="Qwen" />
+              <div><time>Sep 2023 onward</time><strong>Alibaba offer → AI Search</strong><p>Alibaba Qwen ToB</p></div>
+            </div>
+            <div class="journey-step">
+              <p class="journey-label">03 / Academic</p>
+              <div class="journey-logos journey-academic-logos"><img src="https://images.squarespace-cdn.com/content/v1/6597aa54d5a07d4fcd4bd0b1/d9f30852-f528-4747-be59-4e23800cfed4/Yales-logo.jpg?format=1500w" alt="Yale University" /><img src="https://hulab.org/static/images/logo2.png" alt="Westlake University" /></div>
+              <div><time>Sep 2025 – Present</time><strong>Research</strong><p>Retrieval · Yale &amp; Westlake</p></div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-icon" aria-hidden="true">✎</span>
+              <div><time>Today</time><strong>2 first-author papers</strong><p>Information retrieval</p></div>
+            </div>
+        </div>
+      </section>
+
       <section class="section shell" id="publications">
         <div class="section-head">
           <h2>Recent Publications</h2>
@@ -322,5 +356,31 @@
         </div>
       </section>
     </main>
+    <script>
+      const journey = document.querySelector('.journey-route');
+      const journeyPlay = document.querySelector('.journey-play');
+      let observer;
+      function playJourney(manual = false) {
+        journey.classList.add('will-animate');
+        journey.classList.toggle('manual-play', manual);
+        journey.classList.remove('is-visible');
+        void journey.offsetWidth;
+        journey.classList.add('is-visible');
+      }
+      journeyPlay.addEventListener('click', () => {
+        if (observer) observer.disconnect();
+        playJourney(true);
+      });
+      playJourney();
+      if ('IntersectionObserver' in window) {
+        observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            playJourney();
+            observer.disconnect();
+          }
+        }, { threshold: 0.15 });
+        observer.observe(journey);
+      }
+    </script>
   </body>
 </html>
