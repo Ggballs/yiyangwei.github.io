@@ -128,7 +128,7 @@ h3 {
 
 h1 {
   margin-top: 0.25rem;
-  font-size: clamp(2.35rem, 4.2vw, 4rem);
+  font-size: clamp(2.15rem, 3.6vw, 3.4rem);
   letter-spacing: -0.03em;
 }
 
@@ -149,6 +149,12 @@ h3 {
   font-size: 1.05rem;
 }
 
+.hero-email {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .person-link {
   text-decoration: underline;
   text-underline-offset: 0.16em;
@@ -166,6 +172,23 @@ h3 {
 
 .hero-links span {
   color: rgba(31, 26, 23, 0.3);
+}
+
+.hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hero-links svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .hero-meta {
