@@ -257,7 +257,7 @@ h3 {
 
 .publication {
   display: grid;
-  grid-template-columns: 165px 1fr;
+  grid-template-columns: 220px 1fr;
   gap: 1.4rem;
   padding: 1.25rem 1.35rem;
   border-radius: var(--radius-md);
@@ -299,6 +299,19 @@ h3 {
 
 .publication-meta {
   padding-top: 0.18rem;
+}
+
+.publication-figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.publication .venue {
+  margin-top: 0.65rem;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .publication-body p:last-child,
